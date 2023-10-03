@@ -9,11 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-slick": "^0.29.0",
+    "react-spring": "^9.7.3",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
+    "@types/node": "20.8.0",
+    "@types/react": "18.2.24",
+    "@types/react-slick": "^0.23.10",
     "eslint": "latest",
     "eslint-config-next": "latest"
   }
