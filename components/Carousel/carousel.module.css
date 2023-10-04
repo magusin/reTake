@@ -1,9 +1,9 @@
 .carouselContainer {
   margin: 0 auto;
   width: 400px;
-  height: 150px;
+  height: 250px;
   position: relative;
-  perspective: 12000px;
+  perspective: 1200px;
 }
 
 .carousel {
@@ -18,7 +18,7 @@
   display: flex;
   position: absolute;
   background: #000;
-  width: 500px;
+  width: 400px;
   height: 250px;
   line-height: 100px;
   font-size: 5em;
@@ -26,7 +26,7 @@
   align-items: center;
   justify-content: center;
   color: #FFF;
-  opacity: 0.95;
+  opacity: 1;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -38,54 +38,27 @@
   align-items: center;
 }
 
+
+
+
 .a {
-  transform: rotateY(0deg) translateZ(1000px);
   background: #ed1c24;
 }
 .b {
-  transform: rotateY(30deg) translateZ(1000px);
   background: #0072bc;
 }
 .c {
-  transform: rotateY(60deg) translateZ(1000px);
   background: #39b54a;
 }
 .d {
-  transform: rotateY(90deg) translateZ(1000px);
   background: #f26522;
 }
 .e {
-  transform: rotateY(120deg) translateZ(1000px);
   background: #630460;
 } 
 .f {
-  transform: rotateY(150deg) translateZ(1000px);
   background: #8c6239;
-}
-.g {
-  transform: rotateY(180deg) translateZ(1000px);
-  background: #ed1c24;
-}
-.h {
-  transform: rotateY(210deg) translateZ(1000px);
-  background: #0072bc;
-}
-.i {
-  transform: rotateY(240deg) translateZ(1000px);
-  background: #39b54a;
-}
-.j {
-  transform: rotateY(270deg) translateZ(1000px);
-  background: #f26522;
-}
-.k {
-  transform: rotateY(300deg) translateZ(1000px);
-  background: #630460;
 } 
-.l {
-  transform: rotateY(300deg) translateZ(1000px);
-  background: #8c6239;
-}
 
 .next, .prev {
   color: #444;
