@@ -11,13 +11,16 @@ export default function Home() {
   return (
    <div>
       <Head>
-        <title>Re Take</title>
+        <title>Re: Take</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="mainContent">
         <Image src="/logo.png" alt="Re Take Logo" width="150" height="150" />
+    
         <Carousel />
+  
+        
        
       </main>
 
