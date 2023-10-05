@@ -2,6 +2,32 @@ import React from 'react'
 import styles from './carousel.module.css'
 
 const VideoCarousel = () => {
+  const videos = [
+    {
+      src: 'https://www.youtube.com/embed/PExjHWbkafk',
+      className: styles.a
+    },
+    {
+      src: 'https://www.youtube.com/embed/difKLkqME4I',
+      className: styles.b
+    },
+    {
+      src: 'https://www.youtube.com/embed/ER7DFORQVt0',
+      className: styles.c
+    },
+    {
+      src: 'https://www.youtube.com/embed/fuj0Xy-vl-c',
+      className: styles.d
+    },
+    {
+      src: 'https://www.youtube.com/embed/Lyf-PicX7OY',
+      className: styles.e
+    },
+    {
+      src: 'https://www.youtube.com/embed/Yy0k8kYzflg',
+      className: styles.f
+    }
+  ]
   const carouselRef = React.useRef(null)
 
   const numberOfVideos = 6
@@ -36,7 +62,23 @@ const VideoCarousel = () => {
     <>
       <div className={styles.carouselContainer}>
         <div ref={carouselRef} className={styles.carousel}>
-          <div
+          {videos.map((video, index) => (
+            <div
+              key={index}
+              style={{
+                '--index': index,
+                transform: `rotateY(${angle * index}deg) translateZ(${radius}px)`
+              }}
+              className={`${styles.item} ${video.className}`}
+            >
+              <iframe
+                src={video.src}
+                frameBorder="0"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ))}
+          {/* <div
             style={{
               '--index': 0,
               transform: `rotateY(${angle * 0}deg) translateZ(${radius}px)`
@@ -113,7 +155,7 @@ const VideoCarousel = () => {
               frameBorder="0"
               allowFullScreen
             ></iframe>
-          </div>
+          </div> */}
         </div>
       <div className={styles.next} onClick={handleNext}></div>
       <div className={styles.prev} onClick={handlePrev}></div>
