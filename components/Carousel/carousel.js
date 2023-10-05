@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import styles from './carousel.module.css'
 
@@ -33,15 +34,8 @@ const VideoCarousel = () => {
   const numberOfVideos = 6
   const angle = 360 / numberOfVideos
   const [rotateValue, setRotateValue] = React.useState(0)
-  let radius
-  if (window.innerWidth < 601) {
-    radius = 200
-  }
-    else if (window.innerWidth > 600 && window.innerWidth < 1201) {
-    radius = 360
-  } else {
-    radius = 400
-  }
+  const [windowWidth, setWindowWidth] = React.useState(0);
+  
   const handleNext = () => {
     setRotateValue((prev) => prev - angle)
   }
@@ -57,6 +51,27 @@ const VideoCarousel = () => {
       carousel.style.transform = `rotateY(${rotateValue}deg)`
     }
   }, [angle, rotateValue])
+
+  React.useEffect(() => {
+    // Cette fonction ne s'exécutera que du côté client, après le rendu
+    setWindowWidth(window.innerWidth);
+    
+    // Ajoutez un écouteur d'événement pour gérer le redimensionnement si nécessaire
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    
+    // N'oubliez pas de supprimer l'écouteur lorsque le composant est démonté
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  let radius;
+  if (windowWidth < 601) {
+    radius = 200;
+  } else if (windowWidth > 600 && windowWidth < 1201) {
+    radius = 360;
+  } else {
+    radius = 400;
+  }
 
   return (
     <>
