@@ -56,11 +56,20 @@
 .f {
   background: #8c6239;
 } 
+.g {
+  background: #dce62a;
+} 
+.h {
+  background: #77d1d2;
+} 
+.i {
+  background: #d20e80;
+} 
 
 .next, .prev {
   color: #444;
   position: absolute;
-  top: calc(50% - (1em + 2em)/2);  /* Centrage vertical sans utiliser transform */
+  top: calc(50% - (1em + 2em)/2); 
   padding: 1em 2em;
   cursor: pointer;
   background: rgb(83, 81, 81);

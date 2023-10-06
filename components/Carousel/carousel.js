@@ -84,15 +84,15 @@ const VideoCarousel = () => {
     },
     {
       src: 'https://www.youtube.com/embed/JndabkwIEnk',
-      className: styles.f
-    },
-    {
-      src: 'https://www.youtube.com/embed/i0JDoxVlhd8',
       className: styles.g
     },
     {
-      src: 'https://www.youtube.com/embed/_vJfPCl293c',
+      src: 'https://www.youtube.com/embed/i0JDoxVlhd8',
       className: styles.h
+    },
+    {
+      src: 'https://www.youtube.com/embed/_vJfPCl293c',
+      className: styles.i
     }
   ]
   const carouselRef = React.useRef(null)
@@ -142,9 +142,9 @@ const VideoCarousel = () => {
     <>
       <div className={styles.carouselContainer}>
         <div className={styles.buttonsBar}>
-          <button className={styles.button} onClick={() => setCurrentVideos(videoSet1)} >Set 1</button>
-          <button className={styles.button} onClick={() => setCurrentVideos(videoSet2)} >Set 2</button>
-          <button className={styles.button} onClick={() => setCurrentVideos(videoSet3)} >Set 3</button>
+          <button className={styles.button} onClick={() => {setCurrentVideos(videoSet1); setRotateValue(0); }}  >Set 1</button>
+          <button className={styles.button} onClick={() => {setCurrentVideos(videoSet2); setRotateValue(0); }} >Set 2</button>
+          <button className={styles.button} onClick={() => {setCurrentVideos(videoSet3); setRotateValue(0); }} >Set 3</button>
         </div>
         <div ref={carouselRef} className={styles.carousel}>
           {currentVideos.map((video, index) => (
