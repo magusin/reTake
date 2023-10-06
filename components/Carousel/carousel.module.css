@@ -84,20 +84,36 @@
   clip-path: polygon(0 50%, 20% 0, 20% 100%);
 }
 
+.buttonsBar {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -50%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.button {
+  cursor: pointer;
+  padding: 8px;
+  margin: 0 8px;
+}
+
 @media (min-width: 601px) and (max-width: 1200px) {
   .carouselContainer {
-    width: 360px;
-    height: 225px;
+    width: 300px;
+    height: 187.5px;
   }
 
   .carousel {
-    width: 360px;
-    height: 225px;
+    width: 300px;
+    height: 187.5px;
   }
 
   .item {
-    width: 360px;
-    height: 225px;
+    width: 300px;
+    height: 187.5px;
   }
 
   .next, .prev {
