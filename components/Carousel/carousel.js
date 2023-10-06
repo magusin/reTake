@@ -31,11 +31,11 @@ const VideoCarousel = () => {
   ]
   const carouselRef = React.useRef(null)
 
-  const numberOfVideos = 6
+  const numberOfVideos = videos.length
   const angle = 360 / numberOfVideos
   const [rotateValue, setRotateValue] = React.useState(0)
-  const [windowWidth, setWindowWidth] = React.useState(0);
-  
+  const [windowWidth, setWindowWidth] = React.useState(0)
+
   const handleNext = () => {
     setRotateValue((prev) => prev - angle)
   }
@@ -53,25 +53,23 @@ const VideoCarousel = () => {
   }, [angle, rotateValue])
 
   React.useEffect(() => {
-    // Cette fonction ne s'exécutera que du côté client, après le rendu
-    setWindowWidth(window.innerWidth);
-    
-    // Ajoutez un écouteur d'événement pour gérer le redimensionnement si nécessaire
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    
-    // N'oubliez pas de supprimer l'écouteur lorsque le composant est démonté
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    setWindowWidth(window.innerWidth)
+    const handleResize = () => setWindowWidth(window.innerWidth)
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
-  let radius;
+  let videoWidth
   if (windowWidth < 601) {
-    radius = 200;
+    videoWidth = 200
   } else if (windowWidth > 600 && windowWidth < 1201) {
-    radius = 360;
+    videoWidth = 360
   } else {
-    radius = 400;
+    videoWidth = 400
   }
+  const radius = (numberOfVideos - 6) * 25 + videoWidth
+  const scale = videoWidth / radius
+  const buttonMargin = radius - (radius / numberOfVideos)
 
   return (
     <>
@@ -82,98 +80,26 @@ const VideoCarousel = () => {
               key={index}
               style={{
                 '--index': index,
-                transform: `rotateY(${angle * index}deg) translateZ(${radius}px)`
+                transform: `rotateY(${
+                  angle * index
+                }deg) translateZ(${radius}px) scale(${scale})`
               }}
               className={`${styles.item} ${video.className}`}
             >
-              <iframe
-                src={video.src}
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
+              <iframe src={video.src} frameBorder="0" allowFullScreen></iframe>
             </div>
           ))}
-          {/* <div
-            style={{
-              '--index': 0,
-              transform: `rotateY(${angle * 0}deg) translateZ(${radius}px)`
-            }}
-            className={`${styles.item} ${styles.a}`}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/PExjHWbkafk"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div
-            style={{
-              '--index': 1,
-              transform: `rotateY(${angle * 1}deg) translateZ(${radius}px)`
-            }}
-            className={`${styles.item} ${styles.b}`}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/difKLkqME4I"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div
-            style={{
-              '--index': 2,
-              transform: `rotateY(${angle * 2}deg) translateZ(${radius}px)`
-            }}
-            className={`${styles.item} ${styles.c}`}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/ER7DFORQVt0"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div
-            style={{
-              '--index': 3,
-              transform: `rotateY(${angle * 3}deg) translateZ(${radius}px)`
-            }}
-            className={`${styles.item} ${styles.d}`}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/PExjHWbkafk"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div
-            style={{
-              '--index': 4,
-              transform: `rotateY(${angle * 4}deg) translateZ(${radius}px)`
-            }}
-            className={`${styles.item} ${styles.e}`}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/difKLkqME4I"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div
-            style={{
-              '--index': 5,
-              transform: `rotateY(${angle * 5}deg) translateZ(${radius}px)`
-            }}
-            className={`${styles.item} ${styles.f}`}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/ER7DFORQVt0"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div> */}
         </div>
-      <div className={styles.next} onClick={handleNext}></div>
-      <div className={styles.prev} onClick={handlePrev}></div>
+        <div
+          className={styles.next}
+          onClick={handleNext}
+          style={{ marginRight: `-${buttonMargin}px` }}
+        ></div>
+        <div
+          className={styles.prev}
+          onClick={handlePrev}
+          style={{ marginLeft: `-${buttonMargin}px` }}
+        ></div>
       </div>
     </>
   )

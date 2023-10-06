@@ -77,13 +77,11 @@
 .next {
   right: 0;
   clip-path: polygon(100% 50%, 80% 0, 80% 100%);
-  margin-right: -320px;
 }
 
 .prev {
   left: 0;
   clip-path: polygon(0 50%, 20% 0, 20% 100%);
-  margin-left: -320px;
 }
 
 @media (min-width: 601px) and (max-width: 1200px) {
@@ -106,14 +104,6 @@
     top: calc(50% - (0.75em + 1.5em)/2);
     padding: 0.75em 1.5em;
   }
-
-  .next {
-    margin-right: -288px;
-  }
-
-  .prev {
-    margin-left: -288px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -129,20 +119,12 @@
 
   .item {
     width: 200px;
-    height: 187.5px;
+    height: 125px;
   }
 
   .next, .prev {
     top: calc(50% - (0.5em + 1em)/2);
     padding: 0.5em 1em;
-  }
-
-  .next {
-    margin-right: -160px;
-  }
-
-  .prev {
-    margin-left: -160px;
   }
 }
 
