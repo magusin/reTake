@@ -95,6 +95,61 @@ const VideoCarousel = () => {
       className: styles.i
     }
   ]
+
+  const videoSet4 = [
+    {
+      src: 'https://www.youtube.com/embed/mqivs06fkWY',
+      className: styles.a
+    },
+    {
+      src: 'https://www.youtube.com/embed/XbgyYxkKNXU',
+      className: styles.b
+    },
+    {
+      src: 'https://www.youtube.com/embed/tGBhTwsJu1o',
+      className: styles.c
+    },
+    {
+      src: 'https://www.youtube.com/embed/T68dMgS_LVI',
+      className: styles.d
+    },
+    {
+      src: 'https://www.youtube.com/embed/z5ShlE0pRTQ',
+      className: styles.e
+    },
+    {
+      src: 'https://www.youtube.com/embed/LFpd8TbQYmc',
+      className: styles.f
+    },
+    {
+      src: 'https://www.youtube.com/embed/5MvXUwMV9tI',
+      className: styles.g
+    }
+  ]
+
+  const videoSet5 = [
+    {
+      src: 'https://www.youtube.com/embed/PFel7r8o5Es',
+      className: styles.a
+    },
+    {
+      src: 'https://www.youtube.com/embed/h16CeeTSV2Y',
+      className: styles.b
+    },
+    {
+      src: 'https://www.youtube.com/embed/tta2nrgR-Ko',
+      className: styles.c
+    },
+    {
+      src: 'https://www.youtube.com/embed/QSq2xvitIsI',
+      className: styles.d
+    },
+    {
+      src: 'https://www.youtube.com/embed/DySzSG0Bso0',
+      className: styles.e
+    }
+  ]
+
   const carouselRef = React.useRef(null)
 
   const [rotateValue, setRotateValue] = React.useState(0)
@@ -145,6 +200,8 @@ const VideoCarousel = () => {
           <button className={styles.button} onClick={() => {setCurrentVideos(videoSet1); setRotateValue(0); }}  >Set 1</button>
           <button className={styles.button} onClick={() => {setCurrentVideos(videoSet2); setRotateValue(0); }} >Set 2</button>
           <button className={styles.button} onClick={() => {setCurrentVideos(videoSet3); setRotateValue(0); }} >Set 3</button>
+          <button className={styles.button} onClick={() => {setCurrentVideos(videoSet4); setRotateValue(0); }} >Set 4</button>
+          <button className={styles.button} onClick={() => {setCurrentVideos(videoSet5); setRotateValue(0); }} >Set 5</button>
         </div>
         <div ref={carouselRef} className={styles.carousel}>
           {currentVideos.map((video, index) => (
