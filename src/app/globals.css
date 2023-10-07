@@ -15,7 +15,8 @@ a:hover {
 } */
 
 .mainContent {
-  margin: 20px 0;
+  margin: 0 0;
+  background-color: #f4f4f2;;
 }
 
 .footer {
