@@ -1,9 +1,10 @@
 .carouselContainer {
-  margin: 0 auto;
+  margin: 150px auto;
   width: 400px;
   height: 250px;
   position: relative;
   perspective: 1000px;
+
 }
 
 .carousel {
