@@ -1,10 +1,12 @@
 import React from 'react'
 import styles from './page.module.css'
 import Header from '#/components/Header/header'
+import Footer from '#/components/Footer/footer'
 import { BsTwitter } from 'react-icons/bs'
 import { FaInstagram } from 'react-icons/fa'
 import { FaFacebook } from 'react-icons/fa'
 import { FaDiscord } from 'react-icons/fa'
+import { FaYoutube } from 'react-icons/fa'
 
 import Link from 'next/link'
 
@@ -21,6 +23,17 @@ const Contact = () => {
           <div className={styles.section}>
             <h2>Re: Take</h2>
             <div className={styles.socialLinks}>
+            <div className={styles.linkWrapper}>
+                <FaYoutube />
+                <Link
+                  href="https://www.youtube.com/@Retake"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  Youtube de la chaîne
+                </Link>
+              </div>
               <div className={styles.linkWrapper}>
                 <FaInstagram />
 
@@ -127,6 +140,7 @@ const Contact = () => {
           </div>   
           </div>
         </div>
+        <Footer />
       </main>
     </div>
   )
