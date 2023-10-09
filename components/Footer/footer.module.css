@@ -29,6 +29,8 @@
     transform: translateY(1px);
   }
 
-  .footerb {
+  .nav {
+    display: flex;
+    gap: 20px;
     margin-right: 100px;
   }
