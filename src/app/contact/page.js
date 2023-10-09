@@ -142,6 +142,7 @@ const Contact = () => {
         </div>
         <Footer />
       </main>
+      
     </div>
   )
 }

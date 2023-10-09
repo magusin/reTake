@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <div className={styles.footer}>
       <p>&copy; {new Date().getFullYear()} Re: Take</p>
       <nav className={styles.nav}>
         <Link href="/mention" className={styles.link}>
@@ -14,7 +14,7 @@ const Footer = () => {
           CGU
         </Link>
       </nav>
-    </footer>
+    </div>
   )
 }
 
