@@ -2,7 +2,33 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    overflow: hidden;
     text-align: center;
-    padding: 10px 0;
+    padding: 8px 50px;
     background-color: #fa6500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .link {
+    text-decoration: none;
+    color: #0e0101;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .link:hover {
+    background-color: #ee6406;
+    color: #262222;
+  }
+  
+  .link:active {
+    transform: translateY(1px);
+  }
+
+  .footerb {
+    margin-right: 100px;
   }

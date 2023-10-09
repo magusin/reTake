@@ -206,6 +206,7 @@ const VideoCarousel = () => {
         <div ref={carouselRef} className={styles.carousel}>
           {currentVideos.map((video, index) => (
             <div
+            
               key={index}
               style={{
                 '--index': index,
