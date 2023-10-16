@@ -1,0 +1,15 @@
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 74px;
+}
+
+.h1 {
+    color: rgb(5, 5, 58);
+    text-align: center;
+}
+
+.h2 {
+    color: rgb(5, 5, 58);
+}
